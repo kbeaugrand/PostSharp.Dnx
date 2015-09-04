@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0-*",
+  "compilationOptions": {
+    "define": [ "TRACE" ],
+    "warningsAsErrors": true
+  },
+  "dependencies": {
+    "Microsoft.Dnx.Compilation.CSharp": "1.0.0-beta8-15564",
+    "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-beta8-15564",
+    "PostSharp.Compiler.Client": "4.2.0",
+  },
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Runtime": "",
+        "System.IO": "4.0.0.0",
+        "System.Threading.Tasks": "4.0.0.0"
+      }
+    },
+
+  },
+
+
+}

@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "PostSharp.Dnx": "1.0.0-*"
+  },
+
+  "compiler": {
+    "name": "PostSharp",
+    "compilerAssembly": "PostSharp.Dnx",
+    "compilerType" :  "PostSharp.Dnx.PostSharpProjectCompiler"
+  },
+  
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Runtime": "",
+      }
+    }
+  }
+}

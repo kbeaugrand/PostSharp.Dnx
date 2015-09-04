@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "Kestrel": "1.0.0-*",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-*",
+    "Microsoft.AspNet.Hosting": "1.0.0-*",
+    "Microsoft.AspNet.Server.WebListener": "1.0.0-*",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-*",
+    "PostSharp.Dnx": "1.0.0-*",
+    "HelloClassLibrary": "1.0.0-*"
+  },
+    "compiler": {
+    "name": "PostSharp",
+    "compilerAssembly": "PostSharp.Dnx",
+    "compilerType" :  "PostSharp.Dnx.PostSharpProjectCompiler"
+  },
+  "commands": {
+    "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5001",
+    "kestrel": "Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5004"
+  },
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Runtime": "",
+        "System.Threading.Tasks": "",
+        "System.Text.Encoding": "",
+        "System.IO": "",
+        "System.Linq": "",
+        "System.Xml.Linq": "",
+        "System.Xml": "",
+        "System.ComponentModel": ""
+      }
+    }
+  }
+}
