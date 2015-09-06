@@ -20,45 +20,27 @@ namespace PostSharp.Dnx
     /// <summary>
     /// A DNX compile module that post-processes the project using PostSharp.
     /// </summary>
-    public class PostSharpCompilerModule : ICompileModule
+    internal class PostSharpCompilerModule : ICompileModule
     {
-        private static Guid applicationContextGuid = Guid.NewGuid();
-        private static string tempDirectory = Path.Combine(Path.GetTempPath(), "postsharp", applicationContextGuid.ToString());
-        
+    
+        IServiceProvider _provider;
+        LogAdapter _logAdapter;
+        private string _inputDirectory;
+        private string _outputDirectory;
 
-        static PostSharpCompilerModule()
+        public PostSharpCompilerModule(IServiceProvider provider, string workingDirectory) 
         {
-            AppDomain.CurrentDomain.DomainUnload += OnDomainUnload;
-        }
+            _provider = provider;
+            _logAdapter = new LogAdapter();
+            BuildClient = new BuildClient(this._logAdapter);
+            _inputDirectory = Path.Combine(workingDirectory, "pre");
+            _outputDirectory = workingDirectory;
 
-        private static void OnDomainUnload(object sender, EventArgs e)
-        {
-            if ( Directory.Exists( tempDirectory ))
-            {
-                Directory.Delete( tempDirectory );
-            }
-        }
-
-        IServiceProvider provider;
-        LogAdapter logAdapter;
-        private string inputDirectory;
-
-        public PostSharpCompilerModule(IServiceProvider provider) 
-        {
-            this.provider = provider;
-            this.logAdapter = new LogAdapter();
-            this.BuildClient = new BuildClient(this.logAdapter);
-            string tempDirectory = Path.Combine(Path.GetTempPath(), "postsharp", applicationContextGuid.ToString());
-            this.inputDirectory = Path.Combine(tempDirectory, "pre");
-            this.OutputDirectory = Path.Combine(tempDirectory, "post");
-            Directory.CreateDirectory(inputDirectory);
-            Directory.CreateDirectory(this.OutputDirectory);
+            Directory.CreateDirectory(_inputDirectory);
 
         }
 
         public BuildClient BuildClient { get; private set; }
-
-        public string OutputDirectory { get; private set; }
 
         protected virtual void BeforePostCompile()
         {
@@ -87,8 +69,8 @@ namespace PostSharp.Dnx
                 // Copy dll and pdb streams to a temp directory.
               
 
-                string inputAssemblyPath = Path.Combine(inputDirectory, context.ProjectContext.Name + ".dll");
-                string outputAssemblyPath = Path.Combine(this.OutputDirectory, context.ProjectContext.Name + ".dll");
+                string inputAssemblyPath = Path.Combine(_inputDirectory, context.ProjectContext.Name + ".dll");
+                string outputAssemblyPath = Path.Combine(_outputDirectory, context.ProjectContext.Name + ".dll");
                 string inputSymbolPath;
                 string outputSymbolPath;
 
@@ -109,8 +91,8 @@ namespace PostSharp.Dnx
                     if (context.SymbolStream != null)
                     {
 
-                        inputSymbolPath = Path.Combine(inputDirectory, context.ProjectContext.Name + ".pdb");
-                        outputSymbolPath = Path.Combine(this.OutputDirectory, context.ProjectContext.Name + ".pdb");
+                        inputSymbolPath = Path.Combine(_inputDirectory, context.ProjectContext.Name + ".pdb");
+                        outputSymbolPath = Path.Combine(_outputDirectory, context.ProjectContext.Name + ".pdb");
 
                         tasks.Add(Task.Run(() =>
                         {
@@ -226,7 +208,7 @@ namespace PostSharp.Dnx
                 finally
                 {
                     
-                    foreach (Diagnostic diagnostic in this.logAdapter.Diagnostics)
+                    foreach (Diagnostic diagnostic in this._logAdapter.Diagnostics)
                     {
                         context.Diagnostics.Add(diagnostic);
                     }

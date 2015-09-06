@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis;
 using System.IO;
 using System.Reflection;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PostSharp.Dnx
 {
@@ -16,6 +17,8 @@ namespace PostSharp.Dnx
     {
         private readonly RoslynCompiler _compiler;
         private readonly IServiceProvider _services;
+        private readonly ICache _cache;
+        private readonly string _workingDirectory;
 
         public PostSharpProjectCompiler(
             ICache cache,
@@ -35,6 +38,55 @@ namespace PostSharp.Dnx
                 watcher,
                 environment,
                 services);
+            _cache = cache;
+            _workingDirectory = cache.Get<string>("PostSharp.Dnx.WorkingDirectory", cacheContext => Path.Combine(Path.GetTempPath(), "PostSharp.Dnx", Guid.NewGuid().ToString()));
+            Task.Run(() => PurgeWorkingDirectories());
+            CreateWorkingDirectory();
+        }
+
+        private void PurgeWorkingDirectories()
+        {
+            foreach ( string directory in Directory.GetDirectories(Path.Combine(Path.GetTempPath(), "PostSharp.Dnx") ))
+            {
+                string pidFile = Path.Combine(directory, ".pid");
+                if (!File.Exists(pidFile))
+                    continue;
+
+                string pidString = File.ReadAllText(pidFile);
+                int pid;
+                if (!int.TryParse(pidString, out pid))
+                    continue;
+                try
+                {
+                    Process.GetProcessById(pid);
+                }
+                catch ( ArgumentException )
+                {
+                    Console.WriteLine("*** Removing directory {0}", directory);
+                    try
+                    {
+                        Directory.Delete(directory, true);
+                    }
+                    catch ( IOException )
+                    {
+
+                    }
+                }
+            }
+        }
+
+        private void CreateWorkingDirectory()
+        {
+            if (!Directory.Exists(_workingDirectory))
+            {
+                Directory.CreateDirectory(_workingDirectory);
+                File.WriteAllText(Path.Combine(_workingDirectory, ".pid"), Process.GetCurrentProcess().Id.ToString());
+                AppDomain.CurrentDomain.DomainUnload += (sender, args) =>
+                {
+                    Console.WriteLine("*** Removing directory {0}", _workingDirectory);
+                    Directory.Delete(_workingDirectory);
+                };
+            }
         }
 
         public IMetadataProjectReference CompileProject(
@@ -44,7 +96,7 @@ namespace PostSharp.Dnx
         {
             List<DiagnosticResult> diagnosticResults = new List<DiagnosticResult>();
 
-            var module = new PostSharpCompilerModule(_services);
+            var module = new PostSharpCompilerModule(_services, _workingDirectory);
 
             var export = referenceResolver();
             if (export == null)
@@ -64,9 +116,15 @@ namespace PostSharp.Dnx
                 if ( projectReference != null )
                 {
                     // If we have a PostSharpProjectReference, we have to compile it using EmitAssembly and replace the reference by a MetadataFileReference.
-                    DiagnosticResult diagnostics = projectReference.EmitAssembly(module.OutputDirectory);
-                    processedIncomingReferences.Add(new MetadataFileReference(projectReference.Name, module.OutputDirectory + "\\" + projectReference.Name + ".dll"));
-                    diagnosticResults.Add(diagnostics);
+                    string referencePath = Path.Combine(_workingDirectory, projectReference.Name + ".dll");
+                    if (!File.Exists(referencePath))
+                    {
+                        DiagnosticResult diagnostics = projectReference.EmitAssembly(_workingDirectory);
+                        diagnosticResults.Add(diagnostics);
+                    }
+
+                    processedIncomingReferences.Add(new MetadataFileReference(projectReference.Name, referencePath));
+
                 }
                 else
                 {
@@ -90,7 +148,7 @@ namespace PostSharp.Dnx
             compilationContext.Modules.Add(module);
 
             // Project reference
-            return new PostSharpProjectReference( new RoslynProjectReference(compilationContext), diagnosticResults );
+            return new PostSharpProjectReference( new RoslynProjectReference(compilationContext), diagnosticResults, _workingDirectory );
         }
 
       
@@ -100,11 +158,13 @@ namespace PostSharp.Dnx
     {
         RoslynProjectReference _underlyingReference;
         List<DiagnosticResult> _diagnosticResults;
+        string _workingDirectory;
 
-        public PostSharpProjectReference(RoslynProjectReference underlyingReference, List<DiagnosticResult> diagnosticResults)
+        public PostSharpProjectReference(RoslynProjectReference underlyingReference, List<DiagnosticResult> diagnosticResults, string workingDirectory)
         {
             _diagnosticResults = diagnosticResults;
             _underlyingReference = underlyingReference;
+            _workingDirectory = workingDirectory;
         }
 
         MetadataReference IRoslynMetadataReference.MetadataReference
@@ -158,6 +218,12 @@ namespace PostSharp.Dnx
         Assembly IMetadataProjectReference.Load(AssemblyName assemblyName, IAssemblyLoadContext loadContext)
         {
             Console.WriteLine("*** PostSharpProjectReference.Load {0}.dll", _underlyingReference.Name);
+
+            string referencePath = Path.Combine(_workingDirectory, assemblyName.Name + ".dll");
+            if ( File.Exists( referencePath ))
+            {
+                return loadContext.LoadFile(referencePath);
+            }
 
             return _underlyingReference.Load(assemblyName, loadContext);
         }
