@@ -174,7 +174,7 @@
           "lib/dnx451/Microsoft.Dnx.Runtime.Abstractions.dll": {}
         }
       },
-      "PostSharp/4.2.8-debc995a8e": {
+      "PostSharp/4.2.9-preview": {
         "type": "package",
         "compile": {
           "lib/net35-client/PostSharp.dll": {}
@@ -183,10 +183,10 @@
           "lib/net35-client/PostSharp.dll": {}
         }
       },
-      "PostSharp.Compiler.Client/4.2.8-debc995a8e": {
+      "PostSharp.Compiler.Client/4.2.9-preview": {
         "type": "package",
         "dependencies": {
-          "PostSharp": "4.2.8-debc995a8e"
+          "PostSharp": "4.2.9-preview"
         },
         "compile": {
           "lib/net40/PostSharp.Compiler.Client.dll": {}
@@ -360,19 +360,19 @@
         "Microsoft.Dnx.Runtime.Abstractions.nuspec"
       ]
     },
-    "PostSharp/4.2.8-debc995a8e": {
+    "PostSharp/4.2.9-preview": {
       "type": "package",
-      "sha512": "kIs/dcy+daOrbBroik8eP6UXHNUZj7zi3hmOFneH2nmQY3tIJL5/nTDVIsUJhOw7BhvkNEs6jwH/0POUSsSiAQ==",
+      "sha512": "X7o+dTZh2dik/164DFv+26ho9o2NjhbT9MpK5ReSMG65mbUN5nkkIBvAqiR/AJRHm8xDfXhvH70ptPOgX3ys7Q==",
       "files": [
         "lib/net35-client/PostSharp.dll",
         "lib/net35-client/PostSharp.xml",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.dll",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.xml",
-        "PostSharp.4.2.8-debc995a8e.nupkg",
-        "PostSharp.4.2.8-debc995a8e.nupkg.sha512",
+        "PostSharp.4.2.9-preview.nupkg",
+        "PostSharp.4.2.9-preview.nupkg.sha512",
         "PostSharp.nuspec",
         "tools/install.ps1",
-        "tools/PostSharp.MSBuild.v4.2.8.Debug.dll",
+        "tools/PostSharp.MSBuild.v4.2.9.Release.dll",
         "tools/PostSharp.properties",
         "tools/PostSharp.targets",
         "tools/PostSharp.tasks",
@@ -381,13 +381,13 @@
         "tools/uninstall.ps1"
       ]
     },
-    "PostSharp.Compiler.Client/4.2.8-debc995a8e": {
+    "PostSharp.Compiler.Client/4.2.9-preview": {
       "type": "package",
-      "sha512": "aMaKx8P7yM9ER+zOOTmX6ft6Mm4IvrMcuJDSKrCDvubHISd71X0CUyXRcIC//q+SO5JmYsJK38m3EMIkVh0GEg==",
+      "sha512": "8zd9LJFYzFeZNeIWgf6GNH/aE/avL5IY+JQfwVdJhgamQB1wu50zxjjOvBTPB1zlNWE+nxWD4+9iIaj/EcZ8CQ==",
       "files": [
         "lib/net40/PostSharp.Compiler.Client.dll",
-        "PostSharp.Compiler.Client.4.2.8-debc995a8e.nupkg",
-        "PostSharp.Compiler.Client.4.2.8-debc995a8e.nupkg.sha512",
+        "PostSharp.Compiler.Client.4.2.9-preview.nupkg",
+        "PostSharp.Compiler.Client.4.2.9-preview.nupkg.sha512",
         "PostSharp.Compiler.Client.nuspec"
       ]
     },
@@ -422,7 +422,7 @@
     "": [
       "Microsoft.Dnx.Compilation.CSharp >= 1.0.0-beta8-15564",
       "Microsoft.Dnx.Compilation.CSharp.Abstractions >= 1.0.0-beta8-15564",
-      "PostSharp.Compiler.Client >= 4.2.0"
+      "PostSharp.Compiler.Client >= 4.2.9-preview"
     ],
     "DNX,Version=v4.5.1": [
       "fx/System.Runtime ",

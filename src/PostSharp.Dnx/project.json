@@ -7,7 +7,7 @@
   "dependencies": {
     "Microsoft.Dnx.Compilation.CSharp": "1.0.0-beta8-15564",
     "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-beta8-15564",
-    "PostSharp.Compiler.Client": "4.2.0",
+    "PostSharp.Compiler.Client": "4.2.9-preview",
   },
   "frameworks": {
     "dnx451": {
