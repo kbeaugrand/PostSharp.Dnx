@@ -285,6 +285,11 @@ namespace PostSharp.Dnx
             this.Diagnostics.Add(Diagnostic.Create(Dnx.Diagnostics.PipeClientInfo, null, string.Format(format, args)));
         }
 
+        public void LogMessageFromText(string lineOfText)
+        {
+            Console.WriteLine(lineOfText);
+        }
+
         public void LogVerbose(string format, params object[] args)
         {
 
@@ -310,8 +315,6 @@ namespace PostSharp.Dnx
                 case ClientMessageSeverity.Warning:
                     return DiagnosticSeverity.Warning;
 
-                case ClientMessageSeverity.CommandLine:
-                case ClientMessageSeverity.Verbose:
                 default:
                     // May be Hidden too.
                     return DiagnosticSeverity.Info;
