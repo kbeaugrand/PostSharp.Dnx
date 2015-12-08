@@ -5,9 +5,10 @@
     "warningsAsErrors": true
   },
   "dependencies": {
-    "Microsoft.Dnx.Compilation.CSharp": "1.0.0-rc1-15838",
-    "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-rc1-15838",
-    "PostSharp.Compiler.Client": "4.2.10-preview",
+    "Microsoft.Dnx.Compilation.CSharp": "1.0.0-rc1-16231",
+    "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-rc1-16231",
+    "Microsoft.Dnx.Compilation.CSharp.Common": "1.0.0-rc1-16231",
+    "PostSharp.Compiler.Client": "4.2.14"
   },
   "frameworks": {
     "dnx451": {

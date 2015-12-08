@@ -10,6 +10,7 @@ using System.IO;
 using System.Reflection;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace PostSharp.Dnx
 {
@@ -25,7 +26,6 @@ namespace PostSharp.Dnx
             ICacheContextAccessor cacheContextAccessor,
             INamedCacheDependencyProvider namedCacheProvider,
             IAssemblyLoadContext loadContext,
-            IFileWatcher watcher,
             IApplicationEnvironment environment,
             IServiceProvider services)
         {
@@ -35,7 +35,6 @@ namespace PostSharp.Dnx
                 cacheContextAccessor,
                 namedCacheProvider,
                 loadContext,
-                watcher,
                 environment,
                 services);
             _cache = cache;
@@ -227,5 +226,7 @@ namespace PostSharp.Dnx
 
             return _underlyingReference.Load(assemblyName, loadContext);
         }
+
+    
     }
 }

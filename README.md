@@ -36,4 +36,4 @@ For each project that requires PostSharp, you need to do this manually:
 ## Limitations
 
 1. It works only with .NET Framework. CoreCLR is not yet supported.
-2. The code has been tested against DNX v1.0.0-beta8-15564. Make sure you have installed the *unstable* version of DNX.
+2. The code has been tested against DNX v1.0.0-rc1-update1. You may need to modify the source code to build it for a different version of DNX.
