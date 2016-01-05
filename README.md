@@ -1,9 +1,9 @@
 # PostSharp.Dnx
-`PostSharp.Dnx` is a temporary connector to use PostSharp with ASP.NET v5.
+`PostSharp.Dnx` is a temporary connector to use PostSharp with ASP.NET 5.
 
-The connector is provided as an open-source project during until ASP.NET v5 will be RTMed. Then, we plan to merge the feature into the mainstream `PostSharp` NuGet package.
+The connector is provided as an open-source project during until ASP.NET 5 will be RTMed. Then, we plan to merge the feature into the mainstream `PostSharp` NuGet package.
 
-## Using PostSharp with an ASP.NET v5 project
+## Using PostSharp with an ASP.NET 5 project
 
 For each project that requires PostSharp, you need to do this manually:
 
