@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using HelloClassLibrary;
 
-namespace HelloWeb2.ViewModels.Account
+namespace HelloWeb.ViewModels.Account
 {
     public class LoginViewModel
     {
@@ -14,6 +15,7 @@ namespace HelloWeb2.ViewModels.Account
 
         [Required]
         [DataType(DataType.Password)]
+        [Reverse]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]

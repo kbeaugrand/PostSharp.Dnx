@@ -7,11 +7,11 @@ using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.Logging;
-using HelloWeb2.Models;
-using HelloWeb2.Services;
-using HelloWeb2.ViewModels.Manage;
+using HelloWeb.Models;
+using HelloWeb.Services;
+using HelloWeb.ViewModels.Manage;
 
-namespace HelloWeb2.Controllers
+namespace HelloWeb.Controllers
 {
     [Authorize]
     public class ManageController : Controller

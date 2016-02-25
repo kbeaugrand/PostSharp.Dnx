@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using HelloClassLibrary;
 using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.Data.Entity;
 using Microsoft.Extensions.Logging;
-using HelloWeb2.Models;
-using HelloWeb2.Services;
-using HelloWeb2.ViewModels.Account;
+using HelloWeb.Models;
+using HelloWeb.Services;
+using HelloWeb.ViewModels.Account;
 
-namespace HelloWeb2.Controllers
+namespace HelloWeb.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -53,7 +54,7 @@ namespace HelloWeb2.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Login([ApplyFilters] LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
@@ -100,7 +101,7 @@ namespace HelloWeb2.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register([ApplyFilters] RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {

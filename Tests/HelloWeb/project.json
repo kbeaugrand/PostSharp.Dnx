@@ -1,5 +1,5 @@
 {
-  "userSecretsId": "aspnet5-HelloWeb2-b7f61555-5839-42f6-b20b-076d8dfb3a82",
+  "userSecretsId": "aspnet5-HelloWeb-b7f61555-5839-42f6-b20b-076d8dfb3a82",
   "version": "1.0.0-*",
   "compilationOptions": {
     "emitEntryPoint": true
@@ -43,8 +43,7 @@
       "dependencies": {
         "HelloClassLibrary": "1.0.0-*"
       }
-    },
-    "dnxcore50": { }
+    }
   },
 
   "exclude": [

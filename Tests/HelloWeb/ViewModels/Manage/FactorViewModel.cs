@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HelloWeb2.ViewModels.Manage
+namespace HelloWeb.ViewModels.Manage
 {
     public class FactorViewModel
     {

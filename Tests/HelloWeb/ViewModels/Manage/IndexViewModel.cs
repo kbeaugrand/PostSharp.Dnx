@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 
-namespace HelloWeb2.ViewModels.Manage
+namespace HelloWeb.ViewModels.Manage
 {
     public class IndexViewModel
     {

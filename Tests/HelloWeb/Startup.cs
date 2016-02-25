@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using HelloClassLibrary;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -10,14 +9,13 @@ using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using HelloWeb2.Models;
-using HelloWeb2.Services;
+using HelloWeb.Models;
+using HelloWeb.Services;
 
-namespace HelloWeb2
+namespace HelloWeb
 {
     public class Startup
     {
-        [MyAspect]
         public Startup(IHostingEnvironment env)
         {
             // Set up configuration sources.

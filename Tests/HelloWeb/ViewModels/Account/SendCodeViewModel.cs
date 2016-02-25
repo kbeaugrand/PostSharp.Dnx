@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc.Rendering;
 
-namespace HelloWeb2.ViewModels.Account
+namespace HelloWeb.ViewModels.Account
 {
     public class SendCodeViewModel
     {

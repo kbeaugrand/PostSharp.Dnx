@@ -6,9 +6,9 @@ using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
-using HelloWeb2.Models;
+using HelloWeb.Models;
 
-namespace HelloWeb2.Migrations
+namespace HelloWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -98,7 +98,7 @@ namespace HelloWeb2.Migrations
                     b.HasAnnotation("Relational:TableName", "AspNetUserRoles");
                 });
 
-            modelBuilder.Entity("HelloWeb2.Models.ApplicationUser", b =>
+            modelBuilder.Entity("HelloWeb.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id");
 
@@ -155,14 +155,14 @@ namespace HelloWeb2.Migrations
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("HelloWeb2.Models.ApplicationUser")
+                    b.HasOne("HelloWeb.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("HelloWeb2.Models.ApplicationUser")
+                    b.HasOne("HelloWeb.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId");
                 });
@@ -173,7 +173,7 @@ namespace HelloWeb2.Migrations
                         .WithMany()
                         .HasForeignKey("RoleId");
 
-                    b.HasOne("HelloWeb2.Models.ApplicationUser")
+                    b.HasOne("HelloWeb.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId");
                 });

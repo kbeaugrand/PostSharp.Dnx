@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PostSharp.Dnx", "PostSharp.Dnx.xproj", "{BC333CF8-6EE8-4CB4-A546-E52722CE592C}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HelloWeb", "..\..\Tests\HelloWeb\HelloWeb.xproj", "{DAB9CAD3-93A8-48F5-8663-6B40F0F1BC32}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B4B0153-F1DC-4813-AECD-CE2E3499C60A}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\Tests\global.json = ..\..\Tests\global.json
@@ -16,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C334C708-F
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HelloClassLibrary", "..\..\Tests\HelloClassLibrary\HelloClassLibrary.xproj", "{80246662-B4F8-4FB6-8389-5EA359B855DF}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HelloWeb2", "..\..\Tests\HelloWeb2\HelloWeb2.xproj", "{E60AAD25-F916-4BF0-BCC9-11750D7BB150}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HelloWeb", "..\..\Tests\HelloWeb\HelloWeb.xproj", "{E60AAD25-F916-4BF0-BCC9-11750D7BB150}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +26,6 @@ Global
 		{BC333CF8-6EE8-4CB4-A546-E52722CE592C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC333CF8-6EE8-4CB4-A546-E52722CE592C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC333CF8-6EE8-4CB4-A546-E52722CE592C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DAB9CAD3-93A8-48F5-8663-6B40F0F1BC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAB9CAD3-93A8-48F5-8663-6B40F0F1BC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAB9CAD3-93A8-48F5-8663-6B40F0F1BC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAB9CAD3-93A8-48F5-8663-6B40F0F1BC32}.Release|Any CPU.Build.0 = Release|Any CPU
 		{80246662-B4F8-4FB6-8389-5EA359B855DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{80246662-B4F8-4FB6-8389-5EA359B855DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80246662-B4F8-4FB6-8389-5EA359B855DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,7 +39,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DAB9CAD3-93A8-48F5-8663-6B40F0F1BC32} = {C334C708-F084-444E-B5C7-981A1B2F32B4}
 		{80246662-B4F8-4FB6-8389-5EA359B855DF} = {C334C708-F084-444E-B5C7-981A1B2F32B4}
 		{E60AAD25-F916-4BF0-BCC9-11750D7BB150} = {C334C708-F084-444E-B5C7-981A1B2F32B4}
 	EndGlobalSection
