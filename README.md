@@ -1,9 +1,11 @@
 # PostSharp.Dnx
-`PostSharp.Dnx` is a temporary connector to use PostSharp with ASP.NET v5.
+`PostSharp.Dnx` is a temporary connector to use PostSharp with ASP.NET Core.
 
-The connector is provided as an open-source project during until ASP.NET v5 will be RTMed. Then, we plan to merge the feature into the mainstream `PostSharp` NuGet package.
+The connector is provided as an open-source project during until ASP.NET Core will be RTMed. Then, we plan to merge the feature into the mainstream `PostSharp` NuGet package.
 
-## Using PostSharp with an ASP.NET v5 project
+For more information regarding our plans to support .NET Core, see https://www.postsharp.net/support/roadmap.
+
+## Using PostSharp with an .NET Core project
 
 For each project that requires PostSharp, you need to do this manually:
 
@@ -36,4 +38,4 @@ For each project that requires PostSharp, you need to do this manually:
 ## Limitations
 
 1. It works only with .NET Framework. CoreCLR is not yet supported.
-2. The code has been tested against DNX v1.0.0-rc1-update1. You may need to modify the source code to build it for a different version of DNX.
+2. The code has been tested against DNX v1.0.0-rc1-final. You may need to modify the source code to build it for a different version of DNX.

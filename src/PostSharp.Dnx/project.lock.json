@@ -2068,9 +2068,9 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.Dnx.Compilation.CSharp >= 1.0.0-rc1-16231",
-      "Microsoft.Dnx.Compilation.CSharp.Abstractions >= 1.0.0-rc1-16231",
-      "Microsoft.Dnx.Compilation.CSharp.Common >= 1.0.0-rc1-16231",
+      "Microsoft.Dnx.Compilation.CSharp >= 1.0.0-rc1-final",
+      "Microsoft.Dnx.Compilation.CSharp.Abstractions >= 1.0.0-rc1-final",
+      "Microsoft.Dnx.Compilation.CSharp.Common >= 1.0.0-rc1-final",
       "PostSharp.Compiler.Client >= 4.2.14"
     ],
     "DNX,Version=v4.5.1": [
