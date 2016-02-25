@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using PostSharp.Aspects;
 using PostSharp.Aspects.Advices;
@@ -12,17 +13,18 @@ namespace HelloClassLibrary
     [IntroduceInterface(typeof(IFilterable))]
     public class FilterTypePropertiesAspect : InstanceLevelAspect, IFilterable, IAdviceProvider
     {
-        Dictionary<LocationInfo,FilterAttribute> filteredMembers = new Dictionary<LocationInfo, FilterAttribute>();
         [PNonSerialized]
         private bool frozen;
+
+        Dictionary<LocationInfo,FilterAttribute> filteredMembers = new Dictionary<LocationInfo, FilterAttribute>();
         public List<ILocationBinding> bindings;
 
-        public void Filter()
+        public void ApplyFilter()
         {
             foreach (ILocationBinding binding in bindings)
             {
                 FilterAttribute filter = this.filteredMembers[binding.LocationInfo];
-                binding.SetValue( this.Instance, filter.FilterValue( binding.GetValue(this.Instance)) );
+                binding.SetValue( this.Instance, filter.ApplyFilter( binding.GetValue(this.Instance)) );
             }
         }
 
@@ -32,10 +34,8 @@ namespace HelloClassLibrary
 
             // Ask PostSharp to populate the 'bindings' field at runtime.
             FieldInfo importField = this.GetType().GetField(nameof(bindings));
-            foreach (var filteredMember in filteredMembers)
-            {
-                yield return new ImportLocationAdviceInstance( importField, filteredMember.Key );
-            }
+
+            return filteredMembers.Select(filteredMember => new ImportLocationAdviceInstance( importField, filteredMember.Key ));
         }
 
         internal void SetFilter(LocationInfo locationInfo, FilterAttribute filter)

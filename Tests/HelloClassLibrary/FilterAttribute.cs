@@ -69,7 +69,7 @@ namespace HelloClassLibrary
 
         }
 
-        public abstract object FilterValue(object value);
+        public abstract object ApplyFilter(object value);
 
         private static T GetAspect<T>(object target)
         {

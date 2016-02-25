@@ -2,6 +2,6 @@
 {
     public interface IFilterable
     {
-        void Filter();
+        void ApplyFilter();
     }
 }

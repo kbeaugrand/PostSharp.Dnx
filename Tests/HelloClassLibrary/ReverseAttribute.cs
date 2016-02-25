@@ -7,7 +7,7 @@ namespace HelloClassLibrary
     [PSerializable]
     public sealed class ReverseAttribute : FilterAttribute
     {
-        public override object FilterValue(object value)
+        public override object ApplyFilter(object value)
         {
             if (value == null)
                 return null;

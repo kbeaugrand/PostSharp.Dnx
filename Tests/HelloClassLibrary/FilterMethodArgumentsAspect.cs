@@ -37,7 +37,7 @@ namespace HelloClassLibrary
                 FilterAttribute filter = this.filters[i];
                 if (filter != null)
                 {
-                    args.Arguments[i] = filter.FilterValue(args.Arguments[i]);
+                    args.Arguments[i] = filter.ApplyFilter(args.Arguments[i]);
                 }
             }
 
