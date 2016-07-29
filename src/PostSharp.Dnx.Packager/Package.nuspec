@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PostSharp.Dnx</id>
+    <version>1.0.0-beta1</version>
+    <title>PostSharp.Dnx</title>
+    <authors>kbeaugrand</authors>
+    <owners></owners>
+    <description>
+      PostSharp.Dnx is a temporary connector to use PostSharp with ASP.NET Core.
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>
+      The connector is provided as an open-source project during until ASP.NET Core will be RTMed. Then, we plan to merge the feature into the mainstream PostSharp NuGet package.
+
+      For more information regarding our plans to support .NET Core, see https://www.postsharp.net/support/roadmap.
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://nuget.org/packages/PostSharp.Dnx</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <copyright>Copyright  2016</copyright>
+    <dependencies>
+      <dependency id="Microsoft.Dnx.Compilation.CSharp" version="1.0.0-rc1-final" />
+      <dependency id="Microsoft.Dnx.Compilation.CSharp.Abstractions" version="1.0.0-rc1-final" />
+      <dependency id="Microsoft.Dnx.Compilation.CSharp.Common" version="1.0.0-rc1-final" />
+      <dependency id="PostSharp.Compiler.Client" version="4.3.13-rc" />
+    </dependencies>
+    <references></references>
+    <tags></tags>
+  </metadata>
+  <files>
+    <file src="lib\" target="lib" />
+    <file src="tools\" target="tools" />
+    <file src="content\" target="content" />
+  </files>
+</package>

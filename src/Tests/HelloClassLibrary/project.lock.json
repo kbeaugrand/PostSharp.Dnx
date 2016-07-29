@@ -196,7 +196,7 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "PostSharp/4.2.14": {
+      "PostSharp/4.3.13-rc": {
         "type": "package",
         "compile": {
           "lib/net35-client/PostSharp.dll": {}
@@ -205,10 +205,10 @@
           "lib/net35-client/PostSharp.dll": {}
         }
       },
-      "PostSharp.Compiler.Client/4.2.14": {
+      "PostSharp.Compiler.Client/4.3.13-rc": {
         "type": "package",
         "dependencies": {
-          "PostSharp": "4.2.14"
+          "PostSharp": "4.3.13-rc"
         },
         "compile": {
           "lib/net40/PostSharp.Compiler.Client.dll": {}
@@ -217,20 +217,20 @@
           "lib/net40/PostSharp.Compiler.Client.dll": {}
         }
       },
-      "PostSharp.Dnx/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
+      "PostSharp.Dnx/1.0.0-beta1": {
+        "type": "package",
         "dependencies": {
-          "Microsoft.Dnx.Compilation.CSharp": "1.0.0-rc1-16231",
-          "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-rc1-16231",
-          "Microsoft.Dnx.Compilation.CSharp.Common": "1.0.0-rc1-16231",
-          "PostSharp.Compiler.Client": "4.2.14"
+          "Microsoft.Dnx.Compilation.CSharp": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Compilation.CSharp.Common": "1.0.0-rc1-final",
+          "PostSharp.Compiler.Client": "4.3.13-rc"
         },
-        "frameworkAssemblies": [
-          "System.IO",
-          "System.Runtime",
-          "System.Threading.Tasks"
-        ]
+        "compile": {
+          "lib/PostSharp.Dnx.dll": {}
+        },
+        "runtime": {
+          "lib/PostSharp.Dnx.dll": {}
+        }
       },
       "System.Collections/4.0.0": {
         "type": "package",
@@ -606,7 +606,7 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "PostSharp/4.2.14": {
+      "PostSharp/4.3.13-rc": {
         "type": "package",
         "compile": {
           "lib/net35-client/PostSharp.dll": {}
@@ -615,10 +615,10 @@
           "lib/net35-client/PostSharp.dll": {}
         }
       },
-      "PostSharp.Compiler.Client/4.2.14": {
+      "PostSharp.Compiler.Client/4.3.13-rc": {
         "type": "package",
         "dependencies": {
-          "PostSharp": "4.2.14"
+          "PostSharp": "4.3.13-rc"
         },
         "compile": {
           "lib/net40/PostSharp.Compiler.Client.dll": {}
@@ -627,20 +627,20 @@
           "lib/net40/PostSharp.Compiler.Client.dll": {}
         }
       },
-      "PostSharp.Dnx/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
+      "PostSharp.Dnx/1.0.0-beta1": {
+        "type": "package",
         "dependencies": {
-          "Microsoft.Dnx.Compilation.CSharp": "1.0.0-rc1-16231",
-          "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-rc1-16231",
-          "Microsoft.Dnx.Compilation.CSharp.Common": "1.0.0-rc1-16231",
-          "PostSharp.Compiler.Client": "4.2.14"
+          "Microsoft.Dnx.Compilation.CSharp": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Compilation.CSharp.Common": "1.0.0-rc1-final",
+          "PostSharp.Compiler.Client": "4.3.13-rc"
         },
-        "frameworkAssemblies": [
-          "System.IO",
-          "System.Runtime",
-          "System.Threading.Tasks"
-        ]
+        "compile": {
+          "lib/PostSharp.Dnx.dll": {}
+        },
+        "runtime": {
+          "lib/PostSharp.Dnx.dll": {}
+        }
       },
       "System.Collections/4.0.0": {
         "type": "package",
@@ -1016,7 +1016,7 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "PostSharp/4.2.14": {
+      "PostSharp/4.3.13-rc": {
         "type": "package",
         "compile": {
           "lib/net35-client/PostSharp.dll": {}
@@ -1025,10 +1025,10 @@
           "lib/net35-client/PostSharp.dll": {}
         }
       },
-      "PostSharp.Compiler.Client/4.2.14": {
+      "PostSharp.Compiler.Client/4.3.13-rc": {
         "type": "package",
         "dependencies": {
-          "PostSharp": "4.2.14"
+          "PostSharp": "4.3.13-rc"
         },
         "compile": {
           "lib/net40/PostSharp.Compiler.Client.dll": {}
@@ -1037,20 +1037,20 @@
           "lib/net40/PostSharp.Compiler.Client.dll": {}
         }
       },
-      "PostSharp.Dnx/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
+      "PostSharp.Dnx/1.0.0-beta1": {
+        "type": "package",
         "dependencies": {
-          "Microsoft.Dnx.Compilation.CSharp": "1.0.0-rc1-16231",
-          "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-rc1-16231",
-          "Microsoft.Dnx.Compilation.CSharp.Common": "1.0.0-rc1-16231",
-          "PostSharp.Compiler.Client": "4.2.14"
+          "Microsoft.Dnx.Compilation.CSharp": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Compilation.CSharp.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Compilation.CSharp.Common": "1.0.0-rc1-final",
+          "PostSharp.Compiler.Client": "4.3.13-rc"
         },
-        "frameworkAssemblies": [
-          "System.IO",
-          "System.Runtime",
-          "System.Threading.Tasks"
-        ]
+        "compile": {
+          "lib/PostSharp.Dnx.dll": {}
+        },
+        "runtime": {
+          "lib/PostSharp.Dnx.dll": {}
+        }
       },
       "System.Collections/4.0.0": {
         "type": "package",
@@ -1234,10 +1234,6 @@
     }
   },
   "libraries": {
-    "PostSharp.Dnx/1.0.0": {
-      "type": "project",
-      "path": "../../src/PostSharp.Dnx/project.json"
-    },
     "Microsoft.CodeAnalysis.Analyzers/1.0.0": {
       "type": "package",
       "sha512": "E7VdmGw6xO3VHWapC+pNLZmo6yncS53UY3bmb5WZm9wliJBB1A6brgzKA4fcqiLrmJFx71r0M2zEbRDphRLUNg==",
@@ -1256,7 +1252,7 @@
     },
     "Microsoft.CodeAnalysis.Common/1.1.0-rc1-20151109-01": {
       "type": "package",
-      "sha512": "gC9zpQARTjIOht1dZM5Bp0fbOKA40yh0wHBMG2psLGquche0URbfdB9i1pnCusLospEsRIrNvYl75647BcBVug==",
+      "sha512": "5eea4BzS8/ge6aVWbweZ3LxMZumN7lm1hPPjSn3iAS3yi1ozsg1aCZ+lHq2nbS/ZNT+Z3QmTcmKaQd3b4bTqeA==",
       "files": [
         "lib/net45/Microsoft.CodeAnalysis.dll",
         "lib/net45/Microsoft.CodeAnalysis.xml",
@@ -1270,7 +1266,7 @@
     },
     "Microsoft.CodeAnalysis.CSharp/1.1.0-rc1-20151109-01": {
       "type": "package",
-      "sha512": "BFhSWMMlp0xLN/ogn71ULN7N0yy/yqJf/wu63x3KjV497n+8OlyiX7ZnbaQiUeafjW5P2vLzvZH99+5s+dH3Dg==",
+      "sha512": "2u8FpEIzbjvW6kveLYDwVgrrw7rkqN123dQSMLL3aRBcNFpKL4+hJkrU5uutsVNmjrzxjQkrSKQjIw6L2yjU9w==",
       "files": [
         "lib/net45/Microsoft.CodeAnalysis.CSharp.dll",
         "lib/net45/Microsoft.CodeAnalysis.CSharp.xml",
@@ -1394,19 +1390,18 @@
         "Microsoft.Extensions.PlatformAbstractions.nuspec"
       ]
     },
-    "PostSharp/4.2.14": {
+    "PostSharp/4.3.13-rc": {
       "type": "package",
-      "sha512": "fkFN85contuSU4Fqv1RUZNQg/HV7ik9elsgwTv4IJTFV6UxiU0wBl0zJcDa+HVnLBUqxflQEoK5JSAR9y7PShg==",
+      "sha512": "/R9CQtDg6sGMPfsx/X9uag2LprMu5RsupFQGrRKMfjcBGzJgvxgy8qM3SCVV3SeWH2cQ5nfg6zjzSS58ConofQ==",
       "files": [
         "lib/net35-client/PostSharp.dll",
         "lib/net35-client/PostSharp.xml",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.dll",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/PostSharp.xml",
-        "PostSharp.4.2.14.nupkg",
-        "PostSharp.4.2.14.nupkg.sha512",
+        "PostSharp.4.3.13-rc.nupkg.sha512",
         "PostSharp.nuspec",
         "tools/install.ps1",
-        "tools/PostSharp.MSBuild.v4.2.14.Release.dll",
+        "tools/PostSharp.MSBuild.v4.3.13.Release.dll",
         "tools/PostSharp.properties",
         "tools/PostSharp.targets",
         "tools/PostSharp.tasks",
@@ -1415,14 +1410,26 @@
         "tools/uninstall.ps1"
       ]
     },
-    "PostSharp.Compiler.Client/4.2.14": {
+    "PostSharp.Compiler.Client/4.3.13-rc": {
       "type": "package",
-      "sha512": "5y13cwrdB62blUoVXxCtr+sIsVYe/O5FiZxkDlOBO8epEd9WY7iRiZ2Nhy9NNAPPVzGChbAjzzQpBtasGeyrDg==",
+      "sha512": "ek2AFpCKDZfxQ8h7f2JI4/vNQ3mgt11SYK6Xh5D/q+7NpVE77zEirkQ28b70I5fvqdFI1FLyaNeqlBql48EUZg==",
       "files": [
         "lib/net40/PostSharp.Compiler.Client.dll",
-        "PostSharp.Compiler.Client.4.2.14.nupkg",
-        "PostSharp.Compiler.Client.4.2.14.nupkg.sha512",
+        "PostSharp.Compiler.Client.4.3.13-rc.nupkg.sha512",
         "PostSharp.Compiler.Client.nuspec"
+      ]
+    },
+    "PostSharp.Dnx/1.0.0-beta1": {
+      "type": "package",
+      "sha512": "r+lM5ZV8QPt89MOOAkKdfXXTAy+C5b2Y6+dZOWUFtjqasdN3oQjONZ45e68meKNkamnyWh8xWlQEsZEw49xuwQ==",
+      "files": [
+        "lib/PostSharp.Dnx.dll",
+        "PostSharp.Dnx.1.0.0-beta1.nupkg",
+        "PostSharp.Dnx.1.0.0-beta1.nupkg.sha512",
+        "PostSharp.Dnx.nuspec",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "System.Collections/4.0.0": {
@@ -1475,7 +1482,6 @@
     },
     "System.Collections.Immutable/1.1.37": {
       "type": "package",
-      "serviceable": true,
       "sha512": "fTpqwZYBzoklTT+XjTRK8KxvmrGkYHzBiylCcKyQcxiOM8k+QvhNBxRvFHDWzy4OEP5f8/9n+xQ9mEgEXY+muA==",
       "files": [
         "lib/dotnet/System.Collections.Immutable.dll",
@@ -1633,7 +1639,6 @@
     },
     "System.Linq/4.0.0": {
       "type": "package",
-      "serviceable": true,
       "sha512": "r6Hlc+ytE6m/9UBr+nNRRdoJEWjoeQiT3L3lXYFDHoXk3VYsRBCDNXrawcexw7KPLaH0zamQLiAb6avhZ50cGg==",
       "files": [
         "lib/dotnet/System.Linq.dll",
@@ -1714,7 +1719,6 @@
     },
     "System.Reflection.Extensions/4.0.0": {
       "type": "package",
-      "serviceable": true,
       "sha512": "dbYaZWCyFAu1TGYUqR2n+Q+1casSHPR2vVW0WVNkXpZbrd2BXcZ7cpvpu9C98CTHtNmyfMWCLpCclDqly23t6A==",
       "files": [
         "lib/DNXCore50/System.Reflection.Extensions.dll",
@@ -1748,8 +1752,7 @@
     },
     "System.Reflection.Metadata/1.1.0": {
       "type": "package",
-      "serviceable": true,
-      "sha512": "RLIE4sSt2zngMLuqM6YmxBH99mTumtT4DNZE4+msfEaInUP5iCLQT+BHPl+2cjSAP1pdALyAjLB8RtCB+WGGWQ==",
+      "sha512": "a8VsRm/B0Ik1o5FumSMWmpwbG7cvIIajAYhzTTy9VB9XItByJDQHGZkQTIAdsvVJ6MI5O3uH/lb0izgQDlDIWA==",
       "files": [
         "lib/dotnet5.2/System.Reflection.Metadata.dll",
         "lib/dotnet5.2/System.Reflection.Metadata.xml",
@@ -1762,7 +1765,6 @@
     },
     "System.Reflection.Primitives/4.0.0": {
       "type": "package",
-      "serviceable": true,
       "sha512": "n9S0XpKv2ruc17FSnaiX6nV47VfHTZ1wLjKZlAirUZCvDQCH71mVp+Ohabn0xXLh5pK2PKp45HCxkqu5Fxn/lA==",
       "files": [
         "lib/DNXCore50/System.Reflection.Primitives.dll",
@@ -1796,7 +1798,6 @@
     },
     "System.Resources.ResourceManager/4.0.0": {
       "type": "package",
-      "serviceable": true,
       "sha512": "qmqeZ4BJgjfU+G2JbrZt4Dk1LsMxO4t+f/9HarNY6w8pBgweO6jT+cknUH7c3qIrGvyUqraBhU45Eo6UtA0fAw==",
       "files": [
         "lib/DNXCore50/System.Resources.ResourceManager.dll",
