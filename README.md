@@ -7,16 +7,19 @@ For more information regarding our plans to support .NET Core, see https://www.p
 
 ## Using PostSharp with an .NET Core project
 
-For each project that requires PostSharp, you need to do this manually:
+1. Add kbeaugrand public repository : 
+https://www.myget.org/F/kbeaugrand-public/api/v3/index.json
 
-1. Add a dependency to `PostSharp.Dnx`. Note that we don't publish any public NuGet package for this project yet.
+3. For each project that requires PostSharp, install Postsharp.dnx : 
+```
+PM> Install-Package PostSharp.Dnx -Version 1.0.0-beta1
+```
 
-2. Edit `project.json` and add a `compiler` section so that your file looks like this:
-
+3. Add a compiler section so that your `project.json` file looks like this: 
 ```
 {
   "dependencies": {
-    "PostSharp.Dnx": "1.0.0-*"
+    "PostSharp.Dnx": "1.0.0-beta1"
   },
 
   "compiler": {
